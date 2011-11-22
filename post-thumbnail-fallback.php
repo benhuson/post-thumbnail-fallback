@@ -62,6 +62,7 @@ class PTFallback {
 			'post_status'    => null,
 			'post_type'      => 'attachment'
 		);
+		$args = apply_filters( 'ptfallback_first_image_args', $args, $post_id );
 		$attachments = get_children( $args );
 		if ( $attachments ) {
 			foreach ( $attachments as $attachment ) {
